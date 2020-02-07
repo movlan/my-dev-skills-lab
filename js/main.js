@@ -1,20 +1,32 @@
-const storage = window.localStorage;
 var skills = [];
-var storedSkills = storage.getItem('skills');
-if (storedSkills) {
-    skills = JSON.parse(storedSkills)
-}
 
-
-
-$('.addSkill').click(function () {
-    if ($('input').val() === '') return; 
-    skills.push($('input').val());
-    storage.setItem('skills', JSON.stringify(skills));
+$('.addSkill').click(function() {
+    let inputVal = $('input').val();
+    if (inputVal === '') return; 
+    $('div.skills').append(`
+    <tr>
+        <td><button class="removeBtn">X</button></td>
+        <td class="skill">${inputVal}</td>
+    </tr>`);
+    $('input').val('');
 });
 
-storage.setItem('skill2', 'asdasfa')
-// // console.log(skills);
-// // console.log(skills)
-// skills.push('test1', 'test2')
-// storage.setItem("skills1", 'test3')
+$('input').keypress(function (e) {
+    if (e.which == 13) {
+        let inputVal = $('input').val();
+        if (inputVal === '') return; 
+        $('div.skills').append(`
+        <tr>
+            <td><button class="removeBtn">X</button></td>
+            <td class="skill">${inputVal}</td>
+        </tr>`);
+        $('input').val('');
+    }
+  });
+
+$('div.skills').on(
+    'click',
+    'button',
+    function() {
+    $(this).closest('tr').remove();
+});

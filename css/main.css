@@ -1,21 +1,52 @@
 body {
     display: block;
-    text-align-last: center;
 }
-h1 {
-    background-color: greenyellow;
-    width: 300px;
+
+.container {
     margin: 0 auto;
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    background-color: #90c484;
+    margin: 0 auto;
+    color: white;
+    padding: 10px;
     font-size: 20px;
 }
 .skills {
-    width: 300px;
     height: auto;
     margin: 0 auto;
+    text-align-last: left;
+    padding: 10px;
+}
+
+.skill {
+    height: 20px;
+    font-size: 18px;
+    padding-left: 10px;
+    color: orange;
 }
 
 .removeBtn {
     background-color: red;
     color: white;
+    height: 25px;
 
 }
+
+input.uInput {
+    text-align: left;
+    width: 70%;
+    border: 3px solid #90c484;
+    height: 30px;
+}
+button.addSkill {
+    height: 38px;
+    width: 25%;
+    border: 3px solid #90c484;
+    color: #90c484;
+    font-size: 15px;
+}
+
